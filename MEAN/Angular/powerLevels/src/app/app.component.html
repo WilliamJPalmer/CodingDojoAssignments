@@ -1,0 +1,27 @@
+<!--The whole content below can be removed with the new code.-->
+<div style="text-align:center">
+    <fieldset>
+        <legend>PowerComponent</legend>
+            <div class="top">
+                <h1>Initial Power Level:</h1>
+
+                <form (submit)="onClick()">
+
+                <input type="number" name="power_level" value="" min="1" max="100" [(ngModel)]='user.power_level' #initialPowerLevel="ngModel">
+                <input  type="submit" name="" value="submit">
+
+                </form>
+
+            </div>
+            <div class="row_one">
+                <app-human [initialPowerLevel]="users[0]"></app-human>
+                <app-saiyan></app-saiyan>
+                <app-supersaiyan></app-supersaiyan>
+            </div>
+            <div class="row_two">
+                <app-supersaiyantwo></app-supersaiyantwo>
+                <app-supersaiyanthree></app-supersaiyanthree>
+                <app-supersaiyanfour></app-supersaiyanfour>
+            </div>
+    </fieldset>
+</div>

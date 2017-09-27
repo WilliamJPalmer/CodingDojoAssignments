@@ -1,0 +1,170 @@
+<!-- from https://bootsnipp.com/snippets/jvamD -->
+<div id="fullscreen_bg" class="fullscreen_bg"/>
+    <!-- title -->
+    <!-- found at https://cssdeck.com/labs/8k3h0wq2 - saving for css snippets -->
+    <div class="plate">
+      <p class="script"><span></span></p>
+      <p class="shadow text1"></p>
+      <p class="shadow text2">EVENTS</p>
+      <p class="shadow text3"></p>
+      <p class="script"><span></span></p>
+    </div>
+    <div id="regContainer" class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel panel-login">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <a href="#" class="active" id="login-form-link">Login</a>
+                            </div>
+                            <div class="col-xs-6">
+                                <a href="#" id="register-form-link">Register</a>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12 ">
+                                <% if flash[:errors] %>
+                                    <% flash[:errors].each do |item| %>
+                                        <p style="color: red;"> <%= item %> </p>
+                                    <% end %>
+                                <% end %>
+                                <% if flash[:err] %>
+                                    <p style="color: red;"> <%= flash[:err] %> </p>
+                                <% end %>
+                                <!-- form begins LOGIN-->
+                                <form id="login-form" role="form" style="display: block;" action="/users/login" method="post">
+                                  <!-- csrf -->
+                                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                                    <div class="form-group">
+                                        <!-- email -->
+                                        <label for="email">Email</label>
+                                        <input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- password -->
+                                        <label for="password">Password</label>
+                                        <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- form ends -->
+
+                                <!-- form begins REGISTRATION-->
+                                <form id="register-form" role="form" style="display: none;" action="/users/" method="post">
+                                    <!-- csrf -->
+                                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                                    <div class="form-group">
+                                        <!-- first name -->
+                                        <label for="first_name">First Name</label>
+                                        <input type="text" name="first_name" id="first_name" tabindex="1" class="form-control" placeholder="First Name" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- last name -->
+                                        <label for="last_name">Last Name</label>
+                                        <input type="text" name="last_name" id="last_name" tabindex="1" class="form-control" placeholder="Last Name" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- email -->
+                                        <label for="email">Email</label>
+                                        <input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- location -->
+                                        <label for="location">Location</label>
+                                        <input type="text" name="location" id="location" tabindex="1" class="form-control" placeholder="Location" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- state -->
+                                        <label for="state">State</label>
+                                        <select type="text" name="state" id="state" tabindex="1" class="form-control"   placeholder="State" value="">
+                                            <option value="AK">AK</option>
+                                            <option value="AL">AL</option>
+                                            <option value="AR">AR</option>
+                                            <option value="AZ">AZ</option>
+                                            <option value="CA">CA</option>
+                                            <option value="CO">CO</option>
+                                            <option value="CT">CT</option>
+                                            <option value="DC">DC</option>
+                                            <option value="DE">DE</option>
+                                            <option value="FL">FL</option>
+                                            <option value="GA">GA</option>
+                                            <option value="HI">HI</option>
+                                            <option value="IA">IA</option>
+                                            <option value="ID">ID</option>
+                                            <option value="IL">IL</option>
+                                            <option value="IN">IN</option>
+                                            <option value="KS">KS</option>
+                                            <option value="KY">KY</option>
+                                            <option value="LA">LA</option>
+                                            <option value="MA">MA</option>
+                                            <option value="MD">MD</option>
+                                            <option value="ME">ME</option>
+                                            <option value="MI">MI</option>
+                                            <option value="MN">MN</option>
+                                            <option value="MO">MO</option>
+                                            <option value="MS">MS</option>
+                                            <option value="MT">MT</option>
+                                            <option value="NC">NC</option>
+                                            <option value="ND">ND</option>
+                                            <option value="NE">NE</option>
+                                            <option value="NH">NH</option>
+                                            <option value="NJ">NJ</option>
+                                            <option value="NM">NM</option>
+                                            <option value="NV">NV</option>
+                                            <option value="NY">NY</option>
+                                            <option value="OH">OH</option>
+                                            <option value="OK">OK</option>
+                                            <option value="OR">OR</option>
+                                            <option value="PA">PA</option>
+                                            <option value="RI">RI</option>
+                                            <option value="SC">SC</option>
+                                            <option value="SD">SD</option>
+                                            <option value="TN">TN</option>
+                                            <option value="TX">TX</option>
+                                            <option value="UT">UT</option>
+                                            <option value="VA">VA</option>
+                                            <option value="VT">VT</option>
+                                            <option value="WA">WA</option>
+                                            <option value="WI">WI</option>
+                                            <option value="WV">WV</option>
+                                            <option value="WY">WY</option>
+                                            <option value="other">other</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- password -->
+                                        <label for="password">Password</label>
+                                        <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- password confirmation -->
+                                        <label for="confirm-password">Confirm password</label>
+                                        <input type="password" name="password_confirmation" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- form ends -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

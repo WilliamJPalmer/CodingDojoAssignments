@@ -1,0 +1,11 @@
+
+  <fieldset>
+    <div *ngFor = "let product of all">
+        <p> {{product.name}} </p>
+        <p> {{product.price}} </p>
+        <p> {{product.img}} </p>
+        <p> <a routerLink="['/edit', product.id]" > Edit </p>
+        
+    </div>
+
+  </fieldset>

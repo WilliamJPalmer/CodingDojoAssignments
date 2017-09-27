@@ -1,0 +1,120 @@
+
+
+npm install -g @angular/cli          // command line interface
+
+
+
+ng new myFirstAngularApp             // ((NEW PROJECT))
+
+ng new my-project-name --routing     // ((NEW PROJECT)) w/ Routing
+
+cd myFirstAngularApp
+
+ng generate component NAME           // Creates a component
+
+
+
+ng generate service my-service       // Creates a service
+
+ng generate class my-class           // Creates a class
+
+npm install @angular/forms --save    // Forms
+
+ng generate service http             // Service
+
+
+ng serve                             // Start Server
+
+localhost 4200                       // localhost4200
+
+
+
+ng build -w                          // compile and distribute all files..?
+                                     //
+
+servers in terminal
+  mongod  // in the main folder
+
+  nodemon server.js  // in the main folder 
+
+  ng build -w  // activate this in the angular folder in the project
+
+
+
+
+
+
+NGFORM
+    -open app.module.ts
+    -at the top paste this line:
+
+        import { FormsModule }   from '@angular/forms';  // <-- NgModel lives here
+
+    -under BrowserModule, paste this line: // dont forget the comma
+
+        FormsModule     // <-- import the FormsModule before binding with [(ngModel)]
+
+    - add in app.modulel
+
+        import { HttpService } from './http.service';
+
+
+
+
+app.module.ts
+        import { BrowserModule } from '@angular/platform-browser';
+        import { NgModule } from '@angular/core';
+        import { AppRoutingModule } from './app-routing.module';
+        import { AppComponent } from './app.component';
+        import { LandingComponent } from './landing/landing.component';
+        import { HomeComponent } from './home/home.component';
+        import { NotesPrivateComponent } from './notes-private/notes-private.component';
+        import { FormsModule }   from '@angular/forms';
+
+        @NgModule({
+          declarations: [
+            AppComponent,
+            LandingComponent,
+            HomeComponent,
+            NotesPrivateComponent
+          ],
+          imports: [
+            BrowserModule,
+            AppRoutingModule,
+            FormsModule,
+            AppRoutingModule
+          ],
+          providers: [],
+          bootstrap: [AppComponent]
+        })
+        export class AppModule { }
+
+app-routing.module.ts
+
+        import { NgModule } from '@angular/core';
+        import { Routes, RouterModule } from '@angular/router';
+        const routes: Routes = [];
+
+        @NgModule({
+          imports: [RouterModule.forRoot(routes)],
+          exports: [RouterModule]
+        })
+        export class AppRoutingModule { }
+
+
+import { Http } from '@angular/http';
+api call from the component...
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

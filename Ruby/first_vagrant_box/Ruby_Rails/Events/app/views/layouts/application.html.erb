@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Events</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+        <!-- for materialize / CDN-->
+
+        <!-- 3d text -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body>
+  <div style="">
+
+          <br>
+          <br>
+          <% if current_user %>
+              <form action="/users/<%= current_user.id %>" method="post">
+                  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+                  <input type="hidden" name="_method" value="delete">
+                  <input type="submit" name="logout" value="Logout">
+              </form>
+          <% end %>
+  <!-- for materialize CDN-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- 3d text -->
+  <%= yield %>
+
+  </div>
+</body>
+</html>

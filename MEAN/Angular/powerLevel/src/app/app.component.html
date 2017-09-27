@@ -1,0 +1,27 @@
+<fieldset>
+    <legend>Power Component</legend>
+        <form style="text-align:left" (submit)="onSubmit()">
+          <h2>Initial Power Level:</h2>
+          <select name="level" [(ngModel)]='power.level' #level='ngModel' required>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+          </select>
+          <input type="submit" value="Calculate Power">
+        </form>
+        <br>
+        
+    <div class="top-boxes">
+      <div class="boxes">
+        <app-human [newLevel]='power.level'></app-human>
+      </div>
+    </div>
+
+</fieldset>

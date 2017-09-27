@@ -1,0 +1,16 @@
+.top{
+  display: block;
+  text-align: left;
+  height: 200px;
+  margin-left: 20px
+}
+.row_one{
+  height: 200px;
+  margin-bottom: -100px;
+  margin-top: 0px;
+}
+.row_two{
+  height: 200px;
+  margin-bottom: -100px;
+  margin-top: 0px;
+}

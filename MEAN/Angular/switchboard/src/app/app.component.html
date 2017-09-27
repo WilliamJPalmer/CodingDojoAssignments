@@ -1,0 +1,30 @@
+<!--The whole content below can be removed with the new code.-->
+<div class="main" style="text-align:center">
+    <h1>{{title}}!!</h1>
+    <br>
+
+    <div class="outerBox">
+        <button (click)='toggle1()' *ngIf='count1 % 2 === 0' class="innerBoxOff">OFF</button>
+        <button (click)='toggle1()' *ngIf='count1 % 2 === 1' class="innerBoxOn">ON</button>
+    </div>
+    <div class="outerBox">
+        <button (click)='toggle2()' *ngIf='count2 % 2 === 0' class="innerBoxOff">OFF</button>
+        <button (click)='toggle2()' *ngIf='count2 % 2 === 1' class="innerBoxOn">ON</button>
+    </div>
+    <div class="outerBox">
+        <button (click)='toggle3()' *ngIf='count3 % 2 === 0' class="innerBoxOff">OFF</button>
+        <button (click)='toggle3()' *ngIf='count3 % 2 === 1' class="innerBoxOn">ON</button>
+    </div>
+    <div class="outerBox">
+        <button (click)='toggle4()' *ngIf='count4 % 2 === 0' class="innerBoxOff">OFF</button>
+        <button (click)='toggle4()' *ngIf='count4 % 2 === 1' class="innerBoxOn">ON</button>
+    </div>
+    <div class="outerBox">
+        <button (click)='toggle5()' *ngIf='count5 % 2 === 0' class="innerBoxOff">OFF</button>
+        <button (click)='toggle5()' *ngIf='count5 % 2 === 1' class="innerBoxOn">ON</button>
+    </div>
+
+
+
+
+</div>

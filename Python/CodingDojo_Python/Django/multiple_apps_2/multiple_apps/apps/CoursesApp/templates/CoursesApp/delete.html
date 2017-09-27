@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Courses Delete Page</title>
+  </head>
+  <body>
+
+      <h1>Are you sure you want to delete the following courses?</h1>
+      <p>Name: {{ user.name }}</p>
+      <p>Description: {{ user.description }}</p>
+      <p>this is a commment...this was /revert in the form action="" </p>
+
+      <form action="{% url 'courses:index' %}" method="get"> <p>
+          {% csrf_token %}
+          <input type="submit" name="revert" value="No">
+      </form>
+
+      <form action="{% url 'courses:destroy' user.id %}" method="post">
+        {% csrf_token %}
+          <input type="submit" name="yes" value="Yes! I want to delete this">
+      </form>
+
+      <a href="/">Home Page</a>
+
+  </body>
+</html>

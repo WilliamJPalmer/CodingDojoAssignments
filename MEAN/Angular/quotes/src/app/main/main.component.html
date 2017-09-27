@@ -1,0 +1,36 @@
+<div>
+<h1>Quotes List</h1>
+
+  <!-- add for loop -->
+  <fieldset>
+    <div *ngFor="let quote of quotes, let i = index">
+      <fieldset>
+      <p>Quote: {{quote.content}}</p>
+      <p>Author: {{quote.author}}</p>
+      <p>{{i}}</p>
+      <div>
+        <p>this is a count: {{quote.count}}</p>
+      </div>
+      <div >
+        <button (click)="voteUp(quote)" type="button" name="voteUp">Vote Up</button>
+        <button (click)="voteDown(quote)" type="button" name="voteDown">Vote Down</button>
+        <button (click)="delete(i)" type="button" name="delete">Delete</button>
+      </div>
+
+
+    </fieldset>
+    </div>
+
+
+
+
+
+
+  </fieldset>
+
+<br>
+<br>
+<br>
+<br>
+
+</div>

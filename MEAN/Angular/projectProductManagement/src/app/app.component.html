@@ -1,0 +1,21 @@
+<div>
+  <!-- title -->
+  <div>
+      <h1>PPM - {{ title }}</h1>
+  </div>
+  <br><br>
+
+  <!-- links -->
+  <div>
+      <a [routerLink]="['/']">Home</a> |
+      <a [routerLink]="['/product']">Product List</a> |
+      <a [routerLink]="['/create']">Product Creation</a>
+  </div>
+  <br><br>
+
+  <!-- children html -->
+  <fieldset>
+      <router-outlet></router-outlet>
+  </fieldset>
+
+</div>

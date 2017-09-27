@@ -1,0 +1,38 @@
+<!-- from https://bootsnipp.com/snippets/jvamD -->
+<div id="fullscreen_bg" class="fullscreen_bg dashboard">
+    <div id="regContainer" class="container evnt" >
+        <!-- Logout -->
+        <div class="" style="clear:both;">
+        <% if current_user %>
+            <form action="/users/<%= current_user.id %>" method="post">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+                <input type="hidden" name="_method" value="delete">
+                  <input class="button"type="submit" name="logout" value="Logout">
+            </form>
+        <% end %>
+        <a class="profile" href="/events/index">Events Dashboard</a>
+        </div>
+        <h1 style="clear:both;"> <%= @event.name %> </h1>
+        <br><br>
+        <p><strong>Host:</strong> <%= @event.user.first_name %> </p>
+        <p><strong>Date:</strong> <%= @event.date %> </p>
+        <p><strong>Location:</strong> <%= @event.location %> </p>
+        <p><strong>People who are attending the event:</strong> <%= @participant.count %> </p>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Show all the users that are going to the event -->
+                <% @participant.each do |item| %>
+                    <tr>
+                        <td><em><%= item.user.first_name %></em></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>

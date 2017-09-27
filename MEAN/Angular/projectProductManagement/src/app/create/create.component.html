@@ -1,0 +1,47 @@
+<fieldset>
+  <h2>Create a Product</h2>
+
+  <form (submit)="onSubmit()">
+    <p>Title: <input
+      type="text"
+      name="name"
+      value=""
+      required
+      minlength="2"
+      maxlength="24"
+      [(ngModel)]="newProduct.name"
+      #name="ngModel">
+    </p>
+    <div *ngIf='!name.valid'> Title Required! </div>
+
+    <p>Price: <input
+      type="number"
+      name="price"
+      value=""
+      required
+      minlength="1"
+      maxlength="24"
+      [(ngModel)]="newProduct.price"
+      #price="ngModel">
+    </p>
+    <div *ngIf='!price.valid'> Price Required! </div>
+
+    <p>Image Url: <input
+      type="text"
+      name="img"
+      value=""
+      required
+      minlength="1"
+      maxlength="24"
+      [(ngModel)]="newProduct.img"
+      #img="ngModel">
+    </p>
+    <div *ngIf='!img.valid'> Price Required! </div>
+
+    <input type="submit" name="" value="CREATE">
+  </form>
+
+
+
+</fieldset>
+{{ newProduct | json}}

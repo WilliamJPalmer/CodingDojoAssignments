@@ -1,0 +1,37 @@
+<!--The whole content below can be removed with the new code.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!!
+  </h1>
+
+
+    <h1>Practice Routing</h1>
+
+    <p> <a [routerLink]="['/']">Landing</a> </p>
+
+    <p> <a [routerLink]="['/products']">Products</a> </p>
+
+    <p> <a [routerLink]="['/notes', 'private']">Private Notes</a> </p>
+
+    <p> <a [routerLink]="['/gohome']">Go Home</a> </p>
+
+    <!-- <p> <a [routerLink]="['/notes', note.id ]">Home</a> </p> -->
+    <!--  THE LAST LINK GIVING PROBLEMS -->
+
+
+
+
+
+<br>
+<br>
+<hr>
+<hr>
+<br>
+
+    <h2><a target="_blank" href="https://angular.io/docs/ts/latest/tutorial/">Tour of Heroes</a></h2>
+
+    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
+
+    <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
+
+<router-outlet></router-outlet>

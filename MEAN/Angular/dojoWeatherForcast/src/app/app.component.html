@@ -1,0 +1,24 @@
+
+<div>
+  <div>
+    {{ title }}
+  </div>
+  <div>
+    <p>
+      <a [routerLink]="['/']">Home</a> |
+      <a [routerLink]="['/chicago']">Chicago, IL</a> |
+      <a [routerLink]="['/dallas']">Dallas, TX</a> |
+      <a [routerLink]="['/sanjose']">San Jose, CA</a> |
+      <a [routerLink]="['/seatle']">Seatle, WA</a> |
+      <a [routerLink]="['/']">Washington, DC</a> |
+      <a [routerLink]="['/burbank']">Burbank, CA</a>
+    </p>
+  </div>
+
+
+
+<fieldset> <legend> City Info </legend>
+  <router-outlet></router-outlet>
+</fieldset>
+
+</div>

@@ -1,0 +1,50 @@
+<!-- HTML -->
+<div class="main" style="text-align:center">
+
+    <div class="">
+      <fieldset>
+
+      <form (submit)="onSubmit()" method="post">
+        <h1>Add a Quote</h1>
+        <textarea
+            name="content"
+            required
+            minlength="2"
+            maxlength="24"
+            [(ngModel)]="quote.content"
+            #content="ngModel"
+            rows="8"
+            cols="80">
+        </textarea>
+        {{content.errors|json}}
+        {{content.valid|json}}
+        <div *ngIf="!content"><p>Must not leave blank</p></div>
+
+        <p>Author: <input
+            type="text"
+            name="author"
+            required
+            minlength="2"
+            maxlength="24"
+            [(ngModel)]="quote.author"
+            #author="ngModel"
+            value="">
+        </p>
+        {{author.errors|json}}
+        {{author.valid|json}}
+        <div *ngIf="!author"><p>Must not leave blank</p></div>
+        <input type="submit" value="submit">
+      </form>
+
+
+    </fieldset>
+    </div>
+
+  <div>
+      <app-main [quotes]="quotes"></app-main>
+      <!-- green is coming from parent line 13 -->
+      <!-- orange is what child is expecting as an input -->
+  </div>
+
+</div>
+ 
